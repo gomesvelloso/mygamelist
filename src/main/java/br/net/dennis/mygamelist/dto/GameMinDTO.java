@@ -1,6 +1,7 @@
 package br.net.dennis.mygamelist.dto;
 
 import br.net.dennis.mygamelist.entities.Game;
+import br.net.dennis.mygamelist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -25,6 +26,14 @@ public class GameMinDTO {
 		this.year = entity.getYear();
 		this.imgUrl = entity.getImgUrl();
 		this.shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		this.id = projection.getId();
+		this.title = projection.getTitle();
+		this.year = projection.getGameYear();
+		this.imgUrl = projection.getImgUrl();
+		this.shortDescription = projection.getShortDescription();
 	}
 
 	public Long getId() {
